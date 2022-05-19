@@ -122,7 +122,7 @@ var vm = new Vue({
     load_sample: function(){
       var vobj=this;
       $.ajax({
-        url: "https://awiclass.monoame.com/api/command.php?type=get&name=music_bee",
+        url: "https://awiclass.monoame.com/api/command.php?type=get&name=music_dodoro",
         success: function(res){
           vobj.notes=JSON.parse(res);
         }
