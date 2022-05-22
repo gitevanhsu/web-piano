@@ -10,6 +10,20 @@ html, body {
   height: 100%;
   margin: 0px;
   padding: 0px;
+  background: linear-gradient(45deg, #1a001a 0%, white 100%);
+  background-size: 400% 400%;
+  animation: background 5s linear infinite;
+}
+@keyframes background {
+  0% {
+    background-position: 100% 30%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 100% 30%;
+  }
 }
 
 h2 {
@@ -19,15 +33,17 @@ h2 {
 
 button {
   background-color: transparent;
+  border: none;
   border: solid 1px;
   padding: 4px 12px;
   border-radius: 4px;
-  cursor: pointer;
   transition: 0.3s;
+  cursor: pointer;
+  vertical-align: middle;
 }
 button:hover {
-  color: white;
   background-color: #585858;
+  color: white;
 }
 
 .notes_list li {
@@ -38,7 +54,7 @@ button:hover {
   transition: 0.3s;
 }
 .notes_list li:hover {
-  background-color: #e1e1e1;
+  background-color: #d5d5d5;
 }
 .notes_list li.playing {
   background-color: #d5d5d5;
@@ -51,13 +67,13 @@ button:hover {
   font-size: 16px;
 }
 
-.center_box {
+.centerbox {
+  width: 100%;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  width: 100%;
 }
 
 .keyboard {
@@ -69,23 +85,25 @@ button:hover {
 .pianokey {
   display: inline-block;
   position: relative;
-  cursor: pointer;
 }
 
 .white.playing {
   background-color: #d5d5d5;
   transform: translate(0px, 0px);
+  box-shadow: 0px -20px 40px -5px #eee;
 }
 
 .black.playing {
   background-color: #727272;
   transform: translate(0px, 0px);
+  box-shadow: 0px -20px 40px -5px #eee;
 }
 
 .white {
   width: 44px;
   height: 300px;
   border: solid 1px #eee;
+  cursor: pointer;
   transform: translate(-3px, -3px);
   transition: 0.1s;
 }
@@ -95,14 +113,15 @@ button:hover {
 }
 
 .black {
-  position: absolute;
-  top: 0px;
   width: 22px;
   height: 165px;
+  background-color: #585858;
   margin-left: -11px;
   margin-right: -11px;
-  background-color: #585858;
+  position: absolute;
+  top: 0px;
   z-index: 1;
+  cursor: pointer;
   transform: translate(-3px, -3px);
   transition: 0.1s;
 }
@@ -113,7 +132,7 @@ button:hover {
 
 .label {
   position: absolute;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(88, 88, 88, 0.5);
   bottom: -25px;
   left: 50%;
   transform: translateX(-50%);
@@ -126,6 +145,46 @@ i {
   margin-top: 3px;
 }
 
-i.fa-circle {
+i.fa-circle, i.fa-stop {
   color: #cc0000;
+}
+
+.samplebox {
+  position: relative;
+  margin-bottom: 10px;
+}
+.samplebox h3 {
+  color: #585858;
+  margin-bottom: 0px;
+}
+
+.sample {
+  border: solid 1px #eee;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  margin: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.sample .pic {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: 130%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.sample .pic:hover {
+  background-size: 150%;
+  transform: scale(1.1);
+}
+.sample .pic1 {
+  background-image: url("https://i.imgur.com/O3uBNQG.png");
+}
+.sample .pic2 {
+  background-image: url("https://i.imgur.com/fNpCZDB.jpg");
+}
+.sample .pic3 {
+  background-image: url("https://i.imgur.com/1WR68qF.jpg");
 }
